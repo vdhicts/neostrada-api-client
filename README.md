@@ -17,7 +17,7 @@ This package can be used in any PHP project or with any framework. The packages 
 You can install the package via composer:
 
 ```
-composer require vdhicts/neostrada-api-php
+composer require vdhicts/neostrada-api-client
 ```
 
 ## Usage

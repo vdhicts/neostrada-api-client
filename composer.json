@@ -1,5 +1,5 @@
 {
-    "name": "vdhicts/neostrada-api-php",
+    "name": "vdhicts/neostrada-api-client",
     "description": "API client for the API of hosting company Neostrada",
     "license": "BSD-2-Clause",
     "authors": [

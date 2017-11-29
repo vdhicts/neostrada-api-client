@@ -36,7 +36,7 @@ final class Client
      * Contains the cURL request result.
      * @var string
      */
-    private $data = '';
+    private $xmlResponse = false;
 
     /**
      * Returns the Neostrada class instance and creates it if needed
@@ -94,6 +94,24 @@ final class Client
     }
 
     /**
+     * Returns the XML response
+     * @return string
+     */
+    public function getXmlResponse()
+    {
+        return $this->xmlResponse;
+    }
+
+    /**
+     * Stores the xml response.
+     * @param string $xmlResponse
+     */
+    private function setXmlResponse($xmlResponse)
+    {
+        $this->xmlResponse = $xmlResponse;
+    }
+
+    /**
      * Opens a new cURL session for the requested action.
      * @param string $action
      * @param array $parameters
@@ -121,7 +139,7 @@ final class Client
     }
 
     /**
-     * Executes the API request and stores the result.
+     * Executes the API request returns the result.
      * @return bool
      */
     public function execute()
@@ -132,13 +150,13 @@ final class Client
         }
 
         // Perform the request
-        $this->data = curl_exec($this->curlHandler);
+        $this->setXmlResponse(curl_exec($this->curlHandler));
 
         // Close the curl handler
         $this->close();
 
         // The response is false when the request failed
-        return $this->data !== false;
+        return $this->getXmlResponse() !== false;
     }
 
     /**
@@ -147,14 +165,14 @@ final class Client
      */
     public function fetch()
     {
-        if ($this->data === false) {
+        if ($this->getXmlResponse() === false) {
             return false;
         }
 
         // Prevent XML errors
         libxml_use_internal_errors(false);
 
-        $xml = simplexml_load_string($this->data);
+        $xml = simplexml_load_string($this->getXmlResponse());
         if ($xml === false) {
             return false;
         }

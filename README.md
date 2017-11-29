@@ -37,7 +37,7 @@ $client->setApiSecret('[your_api_secret]');
 $client->prepare('domains');
 
 // Perform the request
-$client->execute();
+$xml = $client->execute();
 
 // Turn the response into an array
 $domainsResponse = $client->fetch();

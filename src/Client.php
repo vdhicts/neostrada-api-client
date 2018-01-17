@@ -1,6 +1,6 @@
 <?php
 
-namespace Vdhicts\Neostrada;
+namespace Vdhicts\Neostrada\Client;
 
 final class Client
 {

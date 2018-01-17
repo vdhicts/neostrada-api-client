@@ -26,8 +26,10 @@ Please refer to the [examples](examples.md) for several examples for using this 
 just need a quick start, use this:
 
 ```php
+use Vdhicts\Neostrada\Client;
+
 // Start the client
-$client = \Vdhicts\Neostrada\Client::getInstance();
+$client = Client\Client::getInstance();
 
 // Enter your API key and secret
 $client->setApiKey('[your_api_key]');

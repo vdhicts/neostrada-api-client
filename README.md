@@ -55,6 +55,11 @@ $domainsResponse = $client->fetch();
 Any contribution is welcome, but it should meet the PSR-2 standard and please create one pull request per feature. In 
 exchange you will be credited as contributor on this page.
 
+## Security
+
+If you discover any security related issues in this or other packages of Vdhicts, please email info@vdhicts.nl instead
+of using the issue tracker.
+
 ## License
 
 This package is based on the original 
@@ -65,6 +70,12 @@ This package is based on the original
 
 This package isn't an official package from Neostrada, so they probably won't offer support for it. If you encounter a 
 problem with this client, please open an issue on GitHub.
+
+## About vdhicts
+
+[Van der Heiden ICT services](https://www.vdhicts.nl) is the name of my personal company for which I work as
+freelancer. Van der Heiden ICT services develops and implements IT solutions for businesses and educational
+institutions.
 
 # See
 
